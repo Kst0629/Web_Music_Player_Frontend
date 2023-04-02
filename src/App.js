@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {Routes, Route} from 'react-router-dom'
+import { AdminLogin, Adminpage, Home, Player, UserLogin, Userpage } from './components'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    //route to each sub page
+    <div className='w-screen h-screen bg-blue-400 flex justify-center items-center'>
+        <Routes>
+            <Route path='/adminLogin' element={<AdminLogin/>}/>
+            <Route path='/adminPage' element={<Adminpage/>}/>
+            <Route path='/userLogin' element={<UserLogin/>}/>
+            <Route path='/Userpage' element={<Userpage/>}/>
+            <Route path='/Home' element={<Home/>}/>
+            <Route path='/Player' element={<Player/>}/>
+        </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
