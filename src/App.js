@@ -5,14 +5,17 @@ import { AdminLogin, Adminpage, Home, Player, UserLogin, Userpage } from './comp
 const App = () => {
   return (
     //route to each sub page
-    <div className='w-screen h-screen bg-blue-400 flex justify-center items-center'>
+    <div className='w-screen h-screen bg-primary flex justify-center items-center'>
         <Routes>
             <Route path='/adminLogin' element={<AdminLogin/>}/>
-            <Route path='/adminPage' element={<Adminpage/>}/>
+            <Route path='/Adminpage' element={<Adminpage/>}/>
             <Route path='/userLogin' element={<UserLogin/>}/>
             <Route path='/Userpage' element={<Userpage/>}/>
             <Route path='/Home' element={<Home/>}/>
             <Route path='/Player' element={<Player/>}/>
+            
+            {/** if no any url input, it will route to home page */}
+            <Route path='/*' element={<Home />}/>
         </Routes>
     </div>
   )
